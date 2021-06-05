@@ -41,4 +41,5 @@ jobs:
          ant -version
          echo is git installed?
          git --version
-         
+         echo what about build tools?
+         mvn --version
