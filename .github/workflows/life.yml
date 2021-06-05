@@ -49,4 +49,6 @@ jobs:
          echo $SELENIUM_JARS_PATH
          echo what is the workspace location?
          echo $RUNNER_WORKSPACE
+         echo who is running script?
+         whoami
          
