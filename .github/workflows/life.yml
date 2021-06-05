@@ -42,16 +42,16 @@ jobs:
           - name: Build the native Andriod app
              run: |
               echo here is the ANDRIOD_SDK_ROOT
-		          echo $ANDRIOD_SDK_ROOT
+	      echo $ANDRIOD_SDK_ROOT
            
           - name: Run Selenium tests
              run: |
               echo the SELENIUM_JAR_PATH
-	            echo $SELENIUM_JAR_PATH
+	      echo $SELENIUM_JAR_PATH
            
           - name: Log build tool versions 
-	           run: |
-             git --version
+	     run: |
+	     git --version
              mvn --version
              ant --version
              gradle --version
