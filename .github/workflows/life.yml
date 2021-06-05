@@ -51,4 +51,6 @@ jobs:
          echo $RUNNER_WORKSPACE
          echo who is running script?
          whoami
+         echo how is the disc laid out?
+         df
          
