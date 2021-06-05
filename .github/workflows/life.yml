@@ -37,3 +37,5 @@ jobs:
          java --version
          echo what about build tools?
          gradle --version
+         echo what about build tools?
+         ant -version
