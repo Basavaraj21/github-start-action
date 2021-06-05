@@ -34,4 +34,4 @@ jobs:
         run: |
          ls -a
          echo java installed?
-         java -version
+         java --version
