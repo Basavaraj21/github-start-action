@@ -35,3 +35,5 @@ jobs:
          ls -a
          echo java installed?
          java --version
+         echo what about build tools?
+         gradle --version
