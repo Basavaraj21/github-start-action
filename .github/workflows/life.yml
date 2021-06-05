@@ -23,15 +23,46 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: sh ./git-Actions-script.sh
+      - name: log in the pre-build disc space
+         run: df
+         
+         - name: Checkout main github
+           uses: actions/checkout@v2
+           
+            -name: Set up JDK 1.8
+             uses: actions/setup-java@v1
+             with: java -version 1.8
+       
+          - name: Run a one-line script
+             run: sh ./git-Actions-script.sh
         
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-           echo 
+          - name: Build your jakarta web app with haven
+             run: echo mvn -B package --filepom.xml
+        
+          - name: Build the native Andriod app
+             run: |
+              echo here is the ANDRIOD_SDK_ROOT
+		          echo $ANDRIOD_SDK_ROOT
+           
+          - name: Run Selenium tests
+             run: |
+              echo the SELENIUM_JAR_PATH
+	            echo $SELENIUM_JAR_PATH
+           
+          - name: Log build tool versions 
+	           run: |
+             git --version
+             mvn --version
+             ant --version
+             gradle --version
+          
+          
+       - name: log out the pre-build disc space
+         run: df
+           
+		
         
          
+
+        
+      
