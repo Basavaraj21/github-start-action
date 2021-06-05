@@ -39,3 +39,6 @@ jobs:
          gradle --version
          echo what about build tools?
          ant -version
+         echo is git installed?
+         git --version
+         
