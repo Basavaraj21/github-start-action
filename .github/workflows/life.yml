@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       
       # Checks-out your repository under
-      - name: Step 1 - Log thw pre build disc space
+      - name: Step 1 - Log throw pre build disc space
         run: df
 
       # Runs a single command using the runners shell
@@ -51,10 +51,12 @@ jobs:
         run: |
          echo Here is the SELENIUM_JAR_PATH
          echo $SELENIUM_JAR_PATH
+         
       - name: Step 7 -Log build tool versions
         run: |
          git --version
          mvn --version
+         
       - name: Step 8 -Log the post-build disc space
         run: |
             df
