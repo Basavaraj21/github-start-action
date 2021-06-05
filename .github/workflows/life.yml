@@ -24,8 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: log in the pre-build disc space
-         run: df
-         
+        run: |
+	   df
+
       - name: Checkout main github
         uses: actions/checkout@v2
            
@@ -58,7 +59,8 @@ jobs:
 			 
         
       - name: log out the pre-build disc space
-         run: df
+         run: |
+ 	    df
            
 		
         
