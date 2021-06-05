@@ -39,25 +39,25 @@ jobs:
         with: 
           java-version: 1.8
    
-      - name: Step 4 -Build your JAKarta web app with maven
+      - name: Step 4 - Build your JAKarta web app with maven
         run: echo mvn -B pavkage --file pom.xml
  
-      - name: Step 5 Build the native Android app
+      - name: Step 5 - Build the native Android app
         run: |
-          echo here is the Android_SDK_ROOT
-          echo $Android_SDK_ROOT
+            echo here is the Android_SDK_ROOT
+            echo $Android_SDK_ROOT
   
-      - name: Step 6 -Run Selenium tests
+      - name: Step 6 - Run Selenium tests
         run: |
            echo Here is the SELENIUM_JAR_PATH
            echo $SELENIUM_JAR_PATH
          
-      - name: Step 7 -Log build tool versions
+      - name: Step 7 - Log build tool versions
         run: |
-         git --version
-         mvn --version
+           git --version
+           mvn --version
          
-      - name: Step 8 -Log the post-build disc space
+      - name: Step 8 - Log the post-build disc space
         run: |
             df
 
