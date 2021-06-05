@@ -43,3 +43,6 @@ jobs:
          git --version
          echo what about build tools?
          mvn --version
+         echo where is the Andriod SDK Root?
+         echo $ANDRIOD_SDK_ROOT
+         
