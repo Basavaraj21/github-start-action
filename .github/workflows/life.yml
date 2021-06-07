@@ -16,9 +16,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build-on-windows:
+  build-on-ubantu:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubantu-latest
 
    # Steps represent a sequence of tasks that will be executed as part of the job
     
@@ -41,13 +41,8 @@ jobs:
    
       - name: Step 4 - Build your JAKarta web app with maven
         run: echo mvn -B pavkage --file pom.xml
- 
-      - name: Step 5 - check windows execution policy
-        run: |
-            echo here is the windows Excution Policy
-            Get-ExecutionPolicy
   
-      - name: Step 6 - List windows Environment variables
+      - name: Step 6 - List ubantu Environment variables
         run: env
          
 
