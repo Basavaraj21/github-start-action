@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: getting start
+name: getting started
 
 # Controls when the action will run. 
 on:
@@ -20,31 +20,52 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
 
-   # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
       # Checks-out your repository under
-      - name: Step 1 - Log throw pre build disc space
+      - name: Step 1 - Log thw pre build disc space
         run: df
 
+      # Runs a single command using the runners shell
+      - name: Step 2 - Run a one-line script
+        run: sh ./github-actions-script.sh
+        
       - name: Step 3 - Set up JDK 1.8
         uses: actions/setup-java@v1
-        with: 
-          java-version: 1.8
+        with:
+         java-version: 1.8
    
-      - name: Step 4 - Build your JAKarta web app with maven
+      - name: Step 4 -Build your JAKarta web app with maven
         run: echo mvn -B pavkage --file pom.xml
  
-      - name: Step 5 - check windows execution policy
+      - name: Step 5 Build the native Android app
+        run: |
+         echo here is the Android_SDK_ROOT
+         echo $Android_SDK_ROOT
+  
+      - name: Step 6 -Run Selenium tests
+        run: |
+         echo Here is the SELENIUM_JAR_PATH
+         echo $SELENIUM_JAR_PATH
+      - name: Step 7 -Log build tool versions
+        run: |
+         git --version
+         mvn --version
+      - name: Step 8 -Log the post-build disc space
+        run: |
+            df
+      - name: Step 9 -Log env
+        run: |
+            env
+      - name: Step 10 -Get execution policy
         run: |
             echo here is the windows Excution Policy
             Get-ExecutionPolicy
-  
-      - name: Step 6 - List windows Environment variables
-        run: env
- 
+         
   # This workflow contains a single job called "build"
   build-on-ubuntu:
     # The type of runner that the job will run on
@@ -88,3 +109,4 @@ jobs:
       - name: Step 8 -Log the post-build disc space
         run: |
             df
+ 
