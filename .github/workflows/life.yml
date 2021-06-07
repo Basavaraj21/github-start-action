@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build-on-windows:
     # The type of runner that the job will run on
     runs-on: windows-latest
 
@@ -28,7 +28,7 @@ jobs:
       
       # Checks-out your repository under
       - name: Step 1 - Log throw pre build disc space
-        run: df
+        run: ls
 
       # Runs a single command using the runners shell
       - name: Step 2 - Run a one-line script
@@ -50,7 +50,7 @@ jobs:
       - name: Step 6 - List windows Environment variables
         run: env
          
-      
+
 
         
       
