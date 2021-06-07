@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
    # Steps represent a sequence of tasks that will be executed as part of the job
     
@@ -42,24 +42,15 @@ jobs:
       - name: Step 4 - Build your JAKarta web app with maven
         run: echo mvn -B pavkage --file pom.xml
  
-      - name: Step 5 - Build the native Android app
+      - name: Step 5 - check windows execution policy
         run: |
-            echo here is the Android_SDK_ROOT
-            echo $Android_SDK_ROOT
+            echo here is the windows Excution Policy
+            Get-ExecutionPolicy
   
-      - name: Step 6 - Run Selenium tests
-        run: |
-           echo Here is the SELENIUM_JAR_PATH
-           echo $SELENIUM_JAR_PATH
+      - name: Step 6 - List windows Environment variables
+        run: env
          
-      - name: Step 7 - Log build tool versions
-        run: |
-           git --version
-           mvn --version
-         
-      - name: Step 8 - Log the post-build disc space
-        run: |
-            df
+      
 
         
       
